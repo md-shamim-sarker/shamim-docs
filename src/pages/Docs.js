@@ -1,9 +1,12 @@
 import React from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 
 const Docs = () => {
     return (
         <div>
-            <h2>Docs page</h2>
+            <SyntaxHighlighter>
+
+            </SyntaxHighlighter>
         </div>
     );
 };
