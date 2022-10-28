@@ -4,6 +4,8 @@ import Components from "../pages/Components";
 import Docs from "../pages/Docs";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
+import GoogleAuth from "../topics/GoogleAuth";
+import Routing from "../topics/Routing";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
             {
                 path: "/components",
                 element: <Components></Components>
+            },
+            {
+                path: "/routing",
+                element: <Routing></Routing>
+            },
+            {
+                path: "/googleAuth",
+                element: <GoogleAuth></GoogleAuth>
             },
         ],
         errorElement: <ErrorPage></ErrorPage>

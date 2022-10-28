@@ -1,10 +1,30 @@
-import React from 'react';
+import React, {createContext, useState} from 'react';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const UserContext = () => {
+export const AppContext = createContext();
+const notify = () => toast("Copied to clipboard.");
+
+const UserContext = ({children}) => {
+    const [open, setOpen] = useState(false);
+
+    const copyToClipboard = (event) => {
+        const codeBlock = event.target.innerText;
+        navigator.clipboard.writeText(codeBlock);
+        notify();
+    };
+
+    const openHandler = () => {
+        setOpen(!open);
+        console.log(open);
+    };
+
+    const appContextInfo = {copyToClipboard, open, openHandler};
+
     return (
-        <div>
-            <h2>UserContext page</h2>
-        </div>
+        <AppContext.Provider value={appContextInfo}>
+            {children}
+        </AppContext.Provider>
     );
 };
 
