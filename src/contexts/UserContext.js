@@ -3,10 +3,14 @@ import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const AppContext = createContext();
+export const AuthContext = createContext();
+
 const notify = () => toast("Copied to clipboard.");
 
 const UserContext = ({children}) => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false); // Side nav toggler
+    const [dark, setDark] = useState(false);
+    const [user, setUser] = useState(null);
 
     const copyToClipboard = (event) => {
         const codeBlock = event.target.innerText;
@@ -16,15 +20,32 @@ const UserContext = ({children}) => {
 
     const openHandler = () => {
         setOpen(!open);
-        console.log(open);
     };
 
-    const appContextInfo = {copyToClipboard, open, openHandler};
+    const darkHandler = () => {
+        setDark(!dark);
+        console.log(dark);
+    };
+
+    const authContextInfo = {
+        user,
+        setUser
+    };
+
+    const appContextInfo = {
+        copyToClipboard,
+        open,
+        openHandler,
+        dark,
+        darkHandler
+    };
 
     return (
-        <AppContext.Provider value={appContextInfo}>
-            {children}
-        </AppContext.Provider>
+        <AuthContext.Provider value={authContextInfo}>
+            <AppContext.Provider value={appContextInfo}>
+                {children}
+            </AppContext.Provider>
+        </AuthContext.Provider>
     );
 };
 

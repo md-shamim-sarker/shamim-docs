@@ -4,9 +4,9 @@ import {AppContext} from '../contexts/UserContext';
 import TopicNav from './TopicNav';
 
 const RightNav = () => {
-    const {open, openHandler} = useContext(AppContext);
+    const {open, openHandler, dark} = useContext(AppContext);
     return (
-        <div onClick={openHandler} className={open ? 'block, md:hidden h-[93vh] w-[65vw] bg-blue-300 fixed top-[7vh] right-0 overflow-auto px-5' : 'hidden'}>
+        <div onClick={openHandler} className={`${open ? (dark ? 'block, md:hidden h-[93vh] w-[65vw] fixed top-[7vh] right-0 overflow-auto px-5 bg-gray-800 text-gray-50' : 'block, md:hidden h-[93vh] w-[65vw] fixed top-[7vh] right-0 overflow-auto px-5 bg-blue-300') : 'hidden'}`}>
             <TopicNav></TopicNav>
         </div>
     );
