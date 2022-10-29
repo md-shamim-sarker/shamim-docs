@@ -15,7 +15,7 @@ const Main = () => {
                 <Header></Header>
             </div>
             <div className='flex'>
-                <div className={dark ? "bg-gray-800 text-gray-50 hidden md:block w-[20%] h-[93vh] overflow-auto fixed top-[7vh] px-5" : "bg-blue-300 hidden md:block w-[20%] h-[93vh] overflow-auto fixed top-[7vh] px-5"}>
+                <div className={dark ? "bg-gray-800 text-gray-50 hidden md:block w-[20%] h-[92vh] overflow-auto fixed top-[8vh] px-5" : "bg-blue-300 hidden md:block w-[20%] h-[92vh] overflow-auto fixed top-[8vh] px-5"}>
                     <LeftNav></LeftNav>
                 </div>
                 <div className={open ? 'block' : 'sr-only'}>

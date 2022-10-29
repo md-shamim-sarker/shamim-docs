@@ -1,6 +1,6 @@
 import React from 'react';
 import TopicTitle from '../components/TopicTitle';
-import Docs from '../pages/Docs';
+import Docs from '../pages/Portfolio';
 
 const Routing = () => {
     const code = `import React from 'react';

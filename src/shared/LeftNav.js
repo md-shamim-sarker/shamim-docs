@@ -3,7 +3,9 @@ import TopicNav from './TopicNav';
 
 const LeftNav = () => {
     return (
-        <TopicNav></TopicNav>
+        <div>
+            <TopicNav></TopicNav>
+        </div>
     );
 };
 

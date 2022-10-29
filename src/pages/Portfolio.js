@@ -1,7 +1,7 @@
 import {useContext} from 'react';
 import {AppContext} from '../contexts/UserContext';
 
-const Docs = () => {
+const Portfolio = () => {
     const {jsHighlighter} = useContext(AppContext);
 
     const code = `
@@ -25,4 +25,4 @@ const Docs = () => {
     );
 };
 
-export default Docs;
+export default Portfolio;

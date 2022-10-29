@@ -12,13 +12,15 @@ const Header = () => {
 
     return (
         <div className={dark ? "bg-gray-700 text-gray-50" : "bg-blue-200"}>
-            <div className='h-[7vh] flex justify-between items-center px-5 md:px-10 sticky top-0'>
-                <div className='text-2xl font-bold'>
-                    <NavLink to={"/home"} className="hidden md:block">SHAMIM DOCS</NavLink>
+            <div className='h-[8vh] flex gap-x-3 justify-between items-center px-5 md:px-10 sticky top-0'>
+                <div className='text-2xl font-bold flex gap-x-2'>
+                    <NavLink to={"/home"} className="hidden md:block">
+                        <span className='bg-gray-900 p-1 rounded-full text-white'>SD</span> SHAMIM DOCS
+                    </NavLink>
                     <NavLink to={"/home"} className="block md:hidden bg-gray-900 p-1 rounded-full text-white">SD</NavLink>
                 </div>
-                <div className='flex gap-x-5 items-center'>
-                    <NavLink to={"/docs"}>Docs</NavLink>
+                <div className='flex gap-x-3 items-center'>
+                    <NavLink to={"/portfolio"}>Portfolio</NavLink>
                     <NavLink to={"/components"}>Components</NavLink>
                     <DarkLightToggleButton></DarkLightToggleButton>
                     <LoginLogoutToggleButton></LoginLogoutToggleButton>
