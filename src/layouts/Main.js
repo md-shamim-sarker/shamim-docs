@@ -22,7 +22,9 @@ const Main = () => {
                     <RightNav></RightNav>
                 </div>
                 <div className={dark ? 'w-[100%] md:w-[80%] ml-0 md:ml-[20%] px-5 py-3 bg-slate-900 text-gray-50' : 'w-[100%] md:w-[80%] ml-0 md:ml-[20%] px-5 py-3 bg-gray-50 text-gray-800'}>
-                    <Outlet></Outlet>
+                    <div className="mt-14">
+                        <Outlet></Outlet>
+                    </div>
                 </div>
             </div>
             <Footer></Footer>

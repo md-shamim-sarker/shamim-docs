@@ -4,6 +4,7 @@ import Components from "../pages/Components";
 import Docs from "../pages/Docs";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
+import CodeHighlighter from "../topics/CodeHighlighter";
 import GoogleAuth from "../topics/GoogleAuth";
 import Routing from "../topics/Routing";
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: "/googleAuth",
                 element: <GoogleAuth></GoogleAuth>
+            },
+            {
+                path: "/codeHighlighter",
+                element: <CodeHighlighter></CodeHighlighter>
             },
         ],
         errorElement: <ErrorPage></ErrorPage>

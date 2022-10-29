@@ -1,12 +1,12 @@
 import React from 'react';
 import TopicTitle from '../components/TopicTitle';
 
-const GoogleAuth = () => {
+const CodeHighlighter = () => {
     return (
         <div>
-            <TopicTitle>Google Authentication</TopicTitle>
+            <TopicTitle>Code Highlighter</TopicTitle>
         </div>
     );
 };
 
-export default GoogleAuth;
+export default CodeHighlighter;

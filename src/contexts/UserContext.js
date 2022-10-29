@@ -1,6 +1,10 @@
 import React, {createContext, useState} from 'react';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+import prism from 'react-syntax-highlighter/dist/esm/styles/prism/darcula';
+SyntaxHighlighter.registerLanguage('jsx', jsx);
 
 export const AppContext = createContext();
 export const AuthContext = createContext();
@@ -16,6 +20,14 @@ const UserContext = ({children}) => {
         const codeBlock = event.target.innerText;
         navigator.clipboard.writeText(codeBlock);
         notify();
+    };
+
+    const jsHighlighter = (code) => {
+        return (
+            <SyntaxHighlighter onClick={copyToClipboard} language='jsx' style={prism}>
+                {code}
+            </SyntaxHighlighter>
+        );
     };
 
     const openHandler = () => {
@@ -37,7 +49,8 @@ const UserContext = ({children}) => {
         open,
         openHandler,
         dark,
-        darkHandler
+        darkHandler,
+        jsHighlighter
     };
 
     return (
