@@ -5,8 +5,10 @@ import TopicCode from '../components/TopicCode';
 import TopicHeading from '../components/TopicHeading';
 import TopicParagraph from '../components/TopicParagraph';
 import TopicTitle from '../components/TopicTitle';
+import useTitle from '../hooks/useTitle';
 
 const MongodbCrud = () => {
+    useTitle("MongoDB CRUD");
     return (
         <>
             <TopicTitle>React Express Mongo CRUD</TopicTitle>

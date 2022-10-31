@@ -1,11 +1,13 @@
 import React from 'react';
 import TopicTitle from '../components/TopicTitle';
+import useTitle from '../hooks/useTitle';
 
 const ReactRouting = () => {
+    useTitle("React Routing");
     return (
-        <div>
+        <>
             <TopicTitle>React Routing</TopicTitle>
-        </div>
+        </>
     );
 };
 

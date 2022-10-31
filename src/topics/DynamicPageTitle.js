@@ -5,8 +5,10 @@ import TopicCode from '../components/TopicCode';
 import TopicHeading from '../components/TopicHeading';
 import TopicParagraph from '../components/TopicParagraph';
 import TopicTitle from '../components/TopicTitle';
+import useTitle from '../hooks/useTitle';
 
 const DynamicPageTitle = () => {
+    useTitle("Dynamic Page Title");
     return (
         <>
             <TopicTitle>Dynamic Page Title</TopicTitle>

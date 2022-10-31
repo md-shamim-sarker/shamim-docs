@@ -1,11 +1,13 @@
 import React from 'react';
 import TopicTitle from '../components/TopicTitle';
+import useTitle from '../hooks/useTitle';
 
 const CodeHighlighter = () => {
+    useTitle("Code Highlighter");
     return (
-        <div>
+        <>
             <TopicTitle>Code Highlighter</TopicTitle>
-        </div>
+        </>
     );
 };
 

@@ -6,8 +6,10 @@ import TopicHeading from '../components/TopicHeading';
 import TopicParagraph from '../components/TopicParagraph';
 import TopicTitle from '../components/TopicTitle';
 import TopicBullet from '../components/TopicBullet';
+import useTitle from '../hooks/useTitle';
 
 const ExpressServer = () => {
+    useTitle("Express.js");
     return (
         <>
             <TopicTitle>Express.js Server</TopicTitle>
