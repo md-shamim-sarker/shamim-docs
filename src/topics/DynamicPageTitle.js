@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaGithub} from 'react-icons/fa';
+import GithubLink from '../components/GithubLink';
 import TopicBullet from '../components/TopicBullet';
 import TopicCode from '../components/TopicCode';
 import TopicHeading from '../components/TopicHeading';
@@ -44,11 +44,7 @@ const Home = () => {
 
 export default Home;`}</TopicCode>
 
-            <div className='flex justify-center my-5 gap-x-5'>
-                <button title='Github Repository'>
-                    <a href="https://github.com/shamimspro/dynamic-page-title" target="_blank" rel="noreferrer"><FaGithub className='w-10 h-10'></FaGithub></a>
-                </button>
-            </div>
+            <GithubLink>{'https://github.com/shamimspro/dynamic-page-title'}</GithubLink>
         </>
     );
 };

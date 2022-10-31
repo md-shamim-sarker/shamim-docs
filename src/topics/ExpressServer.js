@@ -1,12 +1,11 @@
 import React from 'react';
-import {FaGithub} from 'react-icons/fa';
-import {GiBookmarklet} from 'react-icons/gi';
 import TopicCode from '../components/TopicCode';
 import TopicHeading from '../components/TopicHeading';
 import TopicParagraph from '../components/TopicParagraph';
 import TopicTitle from '../components/TopicTitle';
 import TopicBullet from '../components/TopicBullet';
 import useTitle from '../hooks/useTitle';
+import GithubLink from '../components/GithubLink';
 
 const ExpressServer = () => {
     useTitle("Express.js");
@@ -143,15 +142,8 @@ https://express-server-jade.vercel.app/users/female`}</TopicCode>
             <TopicBullet>19: To update, run this command on cmd</TopicBullet>
             <TopicCode>{`vercel --prod`}</TopicCode>
             <TopicBullet>20: Now, we can use these awesome api in any application</TopicBullet>
-            <div className='flex justify-center my-5 gap-x-5'>
-                <button title='Github Repository'>
-                    <a href="https://github.com/shamimspro/express-server" target="_blank" rel="noreferrer"><FaGithub className='w-10 h-10'></FaGithub></a>
-                </button>
 
-                <button title='Express.js Documentation'>
-                    <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><GiBookmarklet className='w-10 h-10'></GiBookmarklet></a>
-                </button>
-            </div>
+            <GithubLink>{'https://github.com/shamimspro/express-server'}</GithubLink>
         </>
     );
 };

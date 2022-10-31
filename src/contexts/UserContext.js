@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
@@ -36,8 +36,13 @@ const UserContext = ({children}) => {
 
     const darkHandler = () => {
         setDark(!dark);
-        console.log(dark);
+        localStorage.setItem('dark', Number(dark));
     };
+
+    useEffect(() => {
+        const dark = Boolean(Number(localStorage.getItem('dark')));
+        setDark(!dark);
+    }, []);
 
     const authContextInfo = {
         user,

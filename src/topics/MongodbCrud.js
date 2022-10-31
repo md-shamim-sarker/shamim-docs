@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaGithub} from 'react-icons/fa';
+import GithubLink from '../components/GithubLink';
 import TopicBullet from '../components/TopicBullet';
 import TopicCode from '../components/TopicCode';
 import TopicHeading from '../components/TopicHeading';
@@ -316,14 +316,9 @@ export default ErrorPage;`}</TopicCode>
             <TopicHeading>Some Instructions</TopicHeading>
             <TopicParagraph>This CRUD operation project is three tier architechture project. So, to run this project we have to open three servers. They are React.js frontend server, Node.js backend server, MongoDB database server.</TopicParagraph>
 
-            <div className='flex justify-center my-5 gap-x-5'>
-                <button title='Server-Project Repository'>
-                    <a href="https://github.com/shamimspro/react-express-mongo-crud-server" target="_blank" rel="noreferrer"><FaGithub className='w-10 h-10'></FaGithub></a>
-                </button>
-
-                <button title='Client-Project Repository'>
-                    <a href="https://github.com/shamimspro/react-express-mongo-crud-client" target="_blank" rel="noreferrer"><FaGithub className='w-10 h-10'></FaGithub></a>
-                </button>
+            <div className='flex justify-center gap-x-3'>
+                <GithubLink>{'https://github.com/shamimspro/react-express-mongo-crud-server'}</GithubLink>
+                <GithubLink>{'https://github.com/shamimspro/react-express-mongo-crud-client'}</GithubLink>
             </div>
         </>
     );
