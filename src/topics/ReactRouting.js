@@ -1,12 +1,12 @@
 import React from 'react';
 import TopicTitle from '../components/TopicTitle';
 
-const GoogleAuth = () => {
+const ReactRouting = () => {
     return (
         <div>
-            <TopicTitle>Google Authentication</TopicTitle>
+            <TopicTitle>React Routing</TopicTitle>
         </div>
     );
 };
 
-export default GoogleAuth;
+export default ReactRouting;

@@ -4,11 +4,13 @@ import Components from "../pages/Components";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import CodeHighlighter from "../topics/CodeHighlighter";
-import GoogleAuth from "../topics/GoogleAuth";
-import Routing from "../topics/Routing";
 import Portfolio from "../pages/Portfolio";
 import ExpressServer from "../topics/ExpressServer";
 import MongodbCrud from "../topics/MongodbCrud";
+import ContextApi from "../topics/ContextApi";
+import FirebaseAuth from "../topics/FirebaseAuth";
+import ReactRouting from "../topics/ReactRouting";
+import DynamicPageTitle from "../topics/DynamicPageTitle";
 
 const router = createBrowserRouter([
     {
@@ -32,12 +34,12 @@ const router = createBrowserRouter([
                 element: <Components></Components>
             },
             {
-                path: "/routing",
-                element: <Routing></Routing>
+                path: "/reactRouting",
+                element: <ReactRouting></ReactRouting>
             },
             {
-                path: "/googleAuth",
-                element: <GoogleAuth></GoogleAuth>
+                path: "/firebaseAuth",
+                element: <FirebaseAuth></FirebaseAuth>
             },
             {
                 path: "/codeHighlighter",
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
                 path: "/mongodbCrud",
                 element: <MongodbCrud></MongodbCrud>
             },
+            {
+                path: "/contextApi",
+                element: <ContextApi></ContextApi>
+            },
+            {
+                path: "/dynamicRoute",
+                element: <DynamicPageTitle></DynamicPageTitle>
+            }
         ],
         errorElement: <ErrorPage></ErrorPage>
     }

@@ -13,7 +13,7 @@ const MongodbCrud = () => {
             <TopicHeading>What is CRUD operation?</TopicHeading>
             <TopicParagraph>In computer programming, create, read, update, and delete are the four basic operations of persistent storage. CRUD is also sometimes used to describe user interface conventions that facilitate viewing, searching, and changing information using computer-based forms and reports.</TopicParagraph>
             <TopicHeading>Server Side Project</TopicHeading>
-            <TopicBullet>1: Setup server-side project</TopicBullet>
+            <TopicBullet>1: Setup server-side project (Use CMD)</TopicBullet>
             <TopicCode>{`mkdir server-project
 cd server-project
 npm init -y
@@ -25,7 +25,8 @@ npm install mongodb`}</TopicCode>
 .gitignore
 index.js
 package-lock.json
-package.json `}</TopicCode>
+package.json
+README.md`}</TopicCode>
             <TopicBullet>3: .gitignore</TopicBullet>
             <TopicCode>{`node_modules`}</TopicCode>
             <TopicBullet>4: index.js</TopicBullet>
@@ -109,7 +110,7 @@ app.listen(port, () => {
     console.log(\`Example app listening on port \${port}\`);
 });`}</TopicCode>
             <TopicHeading>Client Side Project</TopicHeading>
-            <TopicBullet>1: Setup client-side project</TopicBullet>
+            <TopicBullet>1: Setup client-side project (Use CMD)</TopicBullet>
             <TopicCode>{`npm create vite@latest
 √ Project name: ... vite-project
 √ Select a framework: » React
@@ -311,7 +312,7 @@ const ErrorPage = () => {
 export default ErrorPage;`}</TopicCode>
 
             <TopicHeading>Some Instructions</TopicHeading>
-            <TopicParagraph>This CRUD operation project is three tier model project. So, to run this project we have to open three servers. They are React.js frontend server, Node.js backend server, MongoDB database server.</TopicParagraph>
+            <TopicParagraph>This CRUD operation project is three tier architechture project. So, to run this project we have to open three servers. They are React.js frontend server, Node.js backend server, MongoDB database server.</TopicParagraph>
 
             <div className='flex justify-center my-5 gap-x-5'>
                 <button title='Server-Project Repository'>
