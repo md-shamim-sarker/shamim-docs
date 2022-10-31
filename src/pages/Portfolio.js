@@ -1,26 +1,7 @@
-import {useContext} from 'react';
-import {AppContext} from '../contexts/UserContext';
-
 const Portfolio = () => {
-    const {jsHighlighter} = useContext(AppContext);
-
-    const code = `
-    import React from 'react';
-    const ErrorPage = () => {
-        return (
-            <div>
-                <h2>ErrorPage page</h2>
-            </div>
-        );
-    };
-    export default ErrorPage;
-    `;
-
     return (
-        <div>
-            {
-                jsHighlighter(code)
-            }
+        <div className='h-[90vh] text-3xl flex justify-center items-center'>
+            <h2>Portfolio page</h2>
         </div>
     );
 };

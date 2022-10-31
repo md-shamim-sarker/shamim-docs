@@ -7,6 +7,8 @@ import CodeHighlighter from "../topics/CodeHighlighter";
 import GoogleAuth from "../topics/GoogleAuth";
 import Routing from "../topics/Routing";
 import Portfolio from "../pages/Portfolio";
+import ExpressServer from "../topics/ExpressServer";
+import MongodbCrud from "../topics/MongodbCrud";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
             {
                 path: "/codeHighlighter",
                 element: <CodeHighlighter></CodeHighlighter>
+            },
+            {
+                path: "/expressServer",
+                element: <ExpressServer></ExpressServer>
+            },
+            {
+                path: "/mongodbCrud",
+                element: <MongodbCrud></MongodbCrud>
             },
         ],
         errorElement: <ErrorPage></ErrorPage>
