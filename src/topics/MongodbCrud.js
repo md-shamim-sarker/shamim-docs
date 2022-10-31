@@ -189,19 +189,19 @@ const DisplayData = () => {
             });
     };
 
-                return (
-                <>
-                    <h2>Display User Information</h2>
-                    <Link to={"/insertData"}><button>Insert New Data</button></Link>
-                    {
-                        displayUsers.map(user => <p key={user._id}>
-                            {user.firstName} {user.lastName}
-                            <Link to={\`/update/\${user._id}\`}><button>Update</button></Link>
-                            <button onClick={() => handleDelete(user)}>Delete</button>
-                        </p>)
-                    }
-                </>
-                );
+    return (
+        <>
+            <h2>Display User Information</h2>
+            <Link to={"/insertData"}><button>Insert New Data</button></Link>
+            {
+                displayUsers.map(user => <p key={user._id}>
+                    {user.firstName} {user.lastName}
+                    <Link to={\`/update/\${user._id}\`}><button>Update</button></Link>
+                    <button onClick={() => handleDelete(user)}>Delete</button>
+                </p>)
+            }
+        </>
+    );
 };
 
 export default DisplayData;`} </TopicCode>
@@ -242,19 +242,19 @@ const InsertData = () => {
                 setErrorMessage('');
     };
 
-                return (
-                <>
-                    <h2>Insert Data</h2>
-                    <form onSubmit={handleSubmit(onSubmitHandler)}>
-                        <input onFocus={onFocusHandler} {...register('firstName')} placeholder='First Name' /><br />
-                        <input onFocus={onFocusHandler} {...register('lastName')} placeholder='Last Name' /><br />
-                        <button type="submit">Submit</button>
-                        <Link to={"/"}><button>Display</button></Link>
-                    </form>
-                    <p style={{color: "green"}}>{message}</p>
-                    <p style={{color: "red"}}>{errorMessage}</p>
-                </>
-                );
+    return (
+        <>
+            <h2>Insert Data</h2>
+            <form onSubmit={handleSubmit(onSubmitHandler)}>
+                <input onFocus={onFocusHandler} {...register('firstName')} placeholder='First Name' /><br />
+                <input onFocus={onFocusHandler} {...register('lastName')} placeholder='Last Name' /><br />
+                <button type="submit">Submit</button>
+                <Link to={"/"}><button>Display</button></Link>
+            </form>
+            <p style={{color: "green"}}>{message}</p>
+            <p style={{color: "red"}}>{errorMessage}</p>
+        </>
+    );
 };
 
 export default InsertData;`}</TopicCode>
