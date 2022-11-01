@@ -11,6 +11,7 @@ import ContextApi from "../topics/ContextApi";
 import FirebaseAuth from "../topics/FirebaseAuth";
 import ReactRouting from "../topics/ReactRouting";
 import DynamicPageTitle from "../topics/DynamicPageTitle";
+import PickFormData from "../topics/PickFormData";
 
 const router = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
             {
                 path: "/dynamicRoute",
                 element: <DynamicPageTitle></DynamicPageTitle>
+            },
+            {
+                path: "/pickFormData",
+                element: <PickFormData></PickFormData>
             }
         ],
         errorElement: <ErrorPage></ErrorPage>

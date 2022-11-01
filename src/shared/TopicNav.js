@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {SiExpress, SiFirebase, SiMongodb} from 'react-icons/si';
-import {FaHighlighter, FaReact} from 'react-icons/fa';
+import {FaHighlighter, FaReact, FaWpforms} from 'react-icons/fa';
 import {MdWeb} from 'react-icons/md';
 
 const TopicNav = () => {
@@ -42,6 +42,11 @@ const TopicNav = () => {
             <NavLink to={"/dynamicRoute"} className="flex items-center gap-x-1">
                 <MdWeb></MdWeb>
                 <span>Dynamic Page Title</span>
+            </NavLink><hr />
+
+            <NavLink to={"/pickFormData"} className="flex items-center gap-x-1">
+                <FaWpforms></FaWpforms>
+                <span>Pick Form Data</span>
             </NavLink><hr />
         </div>
     );

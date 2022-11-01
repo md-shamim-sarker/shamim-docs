@@ -44,7 +44,11 @@ app.use(cors());
 app.use(express.json());
 
 const uri = "mongodb://localhost:27017";
-const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1});
+const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverApi: ServerApiVersion.v1
+});
 
 async function run() {
     try {
@@ -182,14 +186,14 @@ const DisplayData = () => {
     // D from CRUD
     const handleDelete = user => {
         fetch(\`http://localhost:5000/users/\${user._id}\`, {
-                    method: 'DELETE'
+            method: 'DELETE'
         })
-            .then(res => res.json())
-            .then(() => {
-                const remainingUsers = displayUsers.filter(usr => usr._id !== user._id);
-                setDisplayUsers(remainingUsers);
-                console.log(\`\${user.firstName} \${user.lastName} is deleted successfully!!!\`);
-            });
+        .then(res => res.json())
+        .then(() => {
+            const remainingUsers = displayUsers.filter(usr => usr._id !== user._id);
+            setDisplayUsers(remainingUsers);
+            console.log(\`\${user.firstName} \${user.lastName} is deleted successfully!!!\`);
+        });
     };
 
     return (
@@ -223,26 +227,24 @@ const InsertData = () => {
     const onSubmitHandler = user => {
         fetch('http://localhost:5000/users', {
             method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
+            headers: {'content-type': 'application/json'},
             body: JSON.stringify(user)
         }).then(() => {
             console.log(\`\${user.firstName} \${user.lastName} is inserted successfully!!!\`);
-                setMessage(\`\${user.firstName} \${user.lastName} is inserted successfully!!!\`);
-                resetField("firstName");
-                resetField("lastName");
-                setErrorMessage('');
+            setMessage(\`\${user.firstName} \${user.lastName} is inserted successfully!!!\`);
+            resetField("firstName");
+            resetField("lastName");
+            setErrorMessage('');
         }).catch(error => {
-                    console.error(error.message);
-                setErrorMessage('Insert Data failed!!!');
-                setMessage('');
+            console.error(error.message);
+            setErrorMessage('Insert Data failed!!!');
+            setMessage('');
         });
     };
 
     const onFocusHandler = () => {
-                    setMessage('');
-                setErrorMessage('');
+        setMessage('');
+        setErrorMessage('');
     };
 
     return (
@@ -275,14 +277,12 @@ const UpdateData = () => {
     // U from CRUD
     const onUpdateHandler = user => {
         fetch(\`http://localhost:5000/users/\${storedUser._id}\`, {
-                    method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-            },
-                body: JSON.stringify(user)
+            method: 'PUT',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(user)
         }).then(() => {
-                    console.log(\`\${user.firstName} \${user.lastName} is updated successfully!!!\`);
-                navigate("/");
+            console.log(\`\${user.firstName} \${user.lastName} is updated successfully!!!\`);
+            navigate("/");
         }).catch(err => console.log(err));
     };
 
