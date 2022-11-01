@@ -12,6 +12,7 @@ import FirebaseAuth from "../topics/FirebaseAuth";
 import ReactRouting from "../topics/ReactRouting";
 import DynamicPageTitle from "../topics/DynamicPageTitle";
 import PickFormData from "../topics/PickFormData";
+import Projects from "../pages/Projects";
 
 const router = createBrowserRouter([
     {
@@ -21,18 +22,6 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
-            },
-            {
-                path: "/home",
-                element: <Home></Home>
-            },
-            {
-                path: "/portfolio",
-                element: <Portfolio></Portfolio>
-            },
-            {
-                path: "/components",
-                element: <Components></Components>
             },
             {
                 path: "/reactRouting",
@@ -65,9 +54,21 @@ const router = createBrowserRouter([
             {
                 path: "/pickFormData",
                 element: <PickFormData></PickFormData>
-            }
+            },
         ],
         errorElement: <ErrorPage></ErrorPage>
+    },
+    {
+        path: "/portfolio",
+        element: <Portfolio></Portfolio>
+    },
+    {
+        path: "/projects",
+        element: <Projects></Projects>
+    },
+    {
+        path: "/components",
+        element: <Components></Components>
     }
 ]);
 

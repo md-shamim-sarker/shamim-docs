@@ -20,7 +20,9 @@ const Header = () => {
                     <NavLink to={"/home"} className="block md:hidden bg-gray-900 p-1 rounded-full text-white">SD</NavLink>
                 </div>
                 <div className='flex gap-x-3 items-center'>
+                    <NavLink to={"/"}>Home</NavLink>
                     <NavLink to={"/portfolio"}>Portfolio</NavLink>
+                    <NavLink to={"/projects"}>Projects</NavLink>
                     <NavLink to={"/components"}>Components</NavLink>
                     <DarkLightToggleButton></DarkLightToggleButton>
                     <LoginLogoutToggleButton></LoginLogoutToggleButton>
