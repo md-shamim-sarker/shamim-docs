@@ -150,7 +150,7 @@ const Layout = () => {
 
 export default Layout;`}</TopicCode>
 
-            <TopicBullet>9:routes.jsx</TopicBullet>
+            <TopicBullet>9: routes.jsx</TopicBullet>
             <TopicCode>{`import {createBrowserRouter} from "react-router-dom";
 import About from "../components/About";
 import Contact from "../components/Contact";
@@ -193,7 +193,7 @@ const App = () => {
 
 export default App;`}</TopicCode>
 
-            <GithubLink>'https://github.com/shamimspro/react-router'</GithubLink>
+            <GithubLink>{`https://github.com/shamimspro/react-router`}</GithubLink>
         </>
     );
 };

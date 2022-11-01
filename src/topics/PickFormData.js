@@ -1,4 +1,5 @@
 import React from 'react';
+import GithubLink from '../components/GithubLink';
 import TopicBullet from '../components/TopicBullet';
 import TopicCode from '../components/TopicCode';
 import TopicHeading from '../components/TopicHeading';
@@ -109,7 +110,7 @@ const OnSubmit = () => {
         event.target.reset();
     };
 
-    const onChangeHandler = (event) => {
+    const onBlurHandler = (event) => {
         event.preventDefault();
         const props = event.target.name;
         const val = event.target.value;
@@ -120,10 +121,10 @@ const OnSubmit = () => {
         <div>
             <h2>onSubmit</h2>
             <form onSubmit={onSubmitHandler}>
-                <input onBlur={onChangeHandler} type="text" name="firstName" placeholder='First Name' /><br />
-                <input onBlur={onChangeHandler} type="text" name="lastName" placeholder='Last Name' /><br />
-                <input onBlur={onChangeHandler} type="email" name="email" placeholder='Email' /><br />
-                <input onBlur={onChangeHandler} type="password" name="password" placeholder='Password' /><br />
+                <input onBlur={onBlurHandler} type="text" name="firstName" placeholder='First Name' /><br />
+                <input onBlur={onBlurHandler} type="text" name="lastName" placeholder='Last Name' /><br />
+                <input onBlur={onBlurHandler} type="email" name="email" placeholder='Email' /><br />
+                <input onBlur={onBlurHandler} type="password" name="password" placeholder='Password' /><br />
                 <input type="submit" value="Submit" />
             </form>
         </div>
@@ -287,6 +288,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>
 );`}</TopicCode>
+            <GithubLink>{`https://github.com/shamimspro/pick-form-data`}</GithubLink>
         </>
     );
 };

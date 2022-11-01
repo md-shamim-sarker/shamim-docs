@@ -234,7 +234,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </UserContext>
   </React.StrictMode>
 );`}</TopicCode>
-            <GithubLink>'https://github.com/shamimspro/react-context-api'</GithubLink>
+            <GithubLink>{`https://github.com/shamimspro/react-context-api`}</GithubLink>
         </>
     );
 };
