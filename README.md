@@ -9,3 +9,11 @@
 - Create a jsx component inside that file
 - Create a route inside Routes.js file under routes folder
 - Create a NavLink inside TopicNav.js under shared folder
+
+# Redeploy firebase
+```bash
+npm run build
+firebase deploy
+```
+# Live Link
+https://shamim-docs.web.app/
