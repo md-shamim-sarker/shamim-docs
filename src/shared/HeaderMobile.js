@@ -1,16 +1,16 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {FaHome} from 'react-icons/fa';
+import {FaHome, FaUser} from 'react-icons/fa';
 import {AiOutlineForm, AiOutlineFundProjectionScreen} from 'react-icons/ai';
 import {ImUserCheck} from 'react-icons/im';
 import {useContext} from 'react';
-import {AppContext} from '../contexts/UserContext';
+import {AppContext, AuthContext} from '../contexts/UserContext';
 import DarkLightToggleButton from '../components/DarkLightToggleButton';
 import LoginLogoutToggleButton from '../components/LoginLogoutToggleButton';
-import UserToggleButton from '../components/UserToggleButton';
 
 const HeaderMobile = () => {
     const {dark} = useContext(AppContext);
+    const {user} = useContext(AuthContext);
 
     return (
         <>
@@ -49,7 +49,11 @@ const HeaderMobile = () => {
                         </span>
                         <span className='flex gap-x-3 items-center'>
                             <DarkLightToggleButton></DarkLightToggleButton>
-                            <UserToggleButton></UserToggleButton>
+                            {
+                                user?.uid
+                                    ? <img src={user.photoURL} alt={user.displayName} title={user.displayName} className="w-7 h-7 rounded-full" />
+                                    : <FaUser></FaUser>
+                            }
                             <NavLink to={"/login"}>
                                 <LoginLogoutToggleButton></LoginLogoutToggleButton>
                             </NavLink>

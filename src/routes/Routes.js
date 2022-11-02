@@ -15,6 +15,7 @@ import PickFormData from "../topics/PickFormData";
 import Projects from "../pages/Projects";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/reactRouting",
-                element: <ReactRouting></ReactRouting>
+                element: <ProtectedRoutes><ReactRouting></ReactRouting></ProtectedRoutes>
             },
             {
                 path: "/firebaseAuth",
@@ -35,27 +36,27 @@ const router = createBrowserRouter([
             },
             {
                 path: "/codeHighlighter",
-                element: <CodeHighlighter></CodeHighlighter>
+                element: <ProtectedRoutes><CodeHighlighter></CodeHighlighter></ProtectedRoutes>
             },
             {
                 path: "/expressServer",
-                element: <ExpressServer></ExpressServer>
+                element: <ProtectedRoutes><ExpressServer></ExpressServer></ProtectedRoutes>
             },
             {
                 path: "/mongodbCrud",
-                element: <MongodbCrud></MongodbCrud>
+                element: <ProtectedRoutes><MongodbCrud></MongodbCrud></ProtectedRoutes>
             },
             {
                 path: "/contextApi",
-                element: <ContextApi></ContextApi>
+                element: <ProtectedRoutes><ContextApi></ContextApi></ProtectedRoutes>
             },
             {
                 path: "/dynamicRoute",
-                element: <DynamicPageTitle></DynamicPageTitle>
+                element: <ProtectedRoutes><DynamicPageTitle></DynamicPageTitle></ProtectedRoutes>
             },
             {
                 path: "/pickFormData",
-                element: <PickFormData></PickFormData>
+                element: <ProtectedRoutes><PickFormData></PickFormData></ProtectedRoutes>
             },
         ],
         errorElement: <ErrorPage></ErrorPage>

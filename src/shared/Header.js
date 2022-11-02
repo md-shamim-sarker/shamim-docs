@@ -1,17 +1,25 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {FaBars, FaHome} from 'react-icons/fa';
+import {FaBars, FaHome, FaUser} from 'react-icons/fa';
 import {AiOutlineForm, AiOutlineFundProjectionScreen} from 'react-icons/ai';
 import {ImUserCheck} from 'react-icons/im';
 import {MdClose} from 'react-icons/md';
 import {useContext} from 'react';
-import {AppContext} from '../contexts/UserContext';
+import {AppContext, AuthContext} from '../contexts/UserContext';
 import DarkLightToggleButton from '../components/DarkLightToggleButton';
-import LoginLogoutToggleButton from '../components/LoginLogoutToggleButton';
-import UserToggleButton from '../components/UserToggleButton';
 
 const Header = () => {
     const {openHandler, open, dark} = useContext(AppContext);
+    const {user, setUser, logOut} = useContext(AuthContext);
+
+    const logOutHandler = () => {
+        logOut()
+            .then(() => {
+                setUser(null);
+            }).catch((error) => {
+                console.log(error);
+            });
+    };
 
     return (
         <>
@@ -50,10 +58,20 @@ const Header = () => {
                         </span>
                         <span className='flex gap-x-3 items-center'>
                             <DarkLightToggleButton></DarkLightToggleButton>
-                            <UserToggleButton></UserToggleButton>
-                            <NavLink to={"/login"}>
-                                <LoginLogoutToggleButton></LoginLogoutToggleButton>
-                            </NavLink>
+
+                            {
+                                user?.uid
+                                    ? <img src={user.photoURL} alt={user.displayName} title={user.displayName} className="w-7 h-7 rounded-full" />
+                                    : <FaUser></FaUser>
+                            }
+
+
+                            {
+                                user?.uid
+                                    ? <button onClick={logOutHandler} className='bg-blue-700 hover:bg-blue-600 text-blue-50 px-2 py-1 rounded-md'>Logout</button>
+                                    : <NavLink to={"/login"}><button className='bg-blue-700 hover:bg-blue-600 text-blue-50 px-2 py-1 rounded-md'>Login</button></NavLink>
+                            }
+
                         </span>
                         <button onClick={openHandler} className="block md:hidden">
                             {
