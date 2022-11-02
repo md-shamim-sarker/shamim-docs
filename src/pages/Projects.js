@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {FaCopyright} from "react-icons/fa";
 import {AppContext} from "../contexts/UserContext";
 import useTitle from "../hooks/useTitle";
-import Header from "../shared/Header";
+import HeaderMobile from "../shared/HeaderMobile";
 
 const Projects = () => {
     const {dark} = useContext(AppContext);
@@ -10,7 +10,7 @@ const Projects = () => {
     return (
         <>
             <div className='w-[100vw] fixed'>
-                <Header></Header>
+                <HeaderMobile></HeaderMobile>
             </div>
 
             <div className={dark ? 'bg-gray-900 text-gray-50' : 'bg-gray-50 text-gray-900'}>
@@ -21,7 +21,7 @@ const Projects = () => {
                 </div>
             </div>
 
-            <div className={dark ? 'bg-gray-700 text-gray-50 w-[100%] float-right flex items-center gap-x-1 justify-center py-5' : 'bg-blue-200 text-gray-800 w-[100%] float-right flex items-center gap-x-1 justify-center py-5'}>
+            <div className={dark ? 'bg-gray-700 text-gray-50 w-[100%] float-right flex items-center gap-x-1 justify-center py-4' : 'bg-blue-200 text-gray-800 w-[100%] float-right flex items-center gap-x-1 justify-center py-4'}>
                 <FaCopyright></FaCopyright>
                 <small>All Rights Reserved | Md. Shamim Sarker | 2022</small>
             </div>

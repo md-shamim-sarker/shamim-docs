@@ -24,13 +24,7 @@ const UserContext = ({children}) => {
 
     const jsHighlighter = (code) => {
         return (
-            <SyntaxHighlighter
-                onClick={copyToClipboard}
-                language='jsx'
-                style={prism}
-                lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
-                wrapLines={true}
-            >
+            <SyntaxHighlighter onClick={copyToClipboard} language='jsx' style={prism}>
                 {code}
             </SyntaxHighlighter>
         );

@@ -1,17 +1,16 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {FaBars, FaHome} from 'react-icons/fa';
+import {FaHome} from 'react-icons/fa';
 import {AiOutlineForm, AiOutlineFundProjectionScreen} from 'react-icons/ai';
 import {ImUserCheck} from 'react-icons/im';
-import {MdClose} from 'react-icons/md';
 import {useContext} from 'react';
 import {AppContext} from '../contexts/UserContext';
 import DarkLightToggleButton from '../components/DarkLightToggleButton';
 import LoginLogoutToggleButton from '../components/LoginLogoutToggleButton';
 import UserToggleButton from '../components/UserToggleButton';
 
-const Header = () => {
-    const {openHandler, open, dark} = useContext(AppContext);
+const HeaderMobile = () => {
+    const {dark} = useContext(AppContext);
 
     return (
         <>
@@ -30,21 +29,21 @@ const Header = () => {
                         </NavLink>
                     </div>
                     <div className='flex gap-x-3 items-center relative'>
-                        <span className='hidden lg:flex gap-x-5 items-center'>
+                        <span className='hidden lg:flex gap-x-3 items-center'>
                             <div className='flex items-center gap-x-1'>
-                                <FaHome className='w-5 h-5'></FaHome>
+                                <FaHome></FaHome>
                                 <NavLink to={"/"}>Home</NavLink>
                             </div>
                             <div className='flex items-center gap-x-1'>
-                                <ImUserCheck className='w-5 h-5'></ImUserCheck>
+                                <ImUserCheck></ImUserCheck>
                                 <NavLink to={"/portfolio"}>Portfolio</NavLink>
                             </div>
                             <div className='flex items-center gap-x-1'>
-                                <AiOutlineFundProjectionScreen className='w-5 h-5'></AiOutlineFundProjectionScreen>
+                                <AiOutlineFundProjectionScreen></AiOutlineFundProjectionScreen>
                                 <NavLink to={"/projects"}>Projects</NavLink>
                             </div>
                             <div className='flex items-center gap-x-1'>
-                                <AiOutlineForm className='w-5 h-5'></AiOutlineForm>
+                                <AiOutlineForm></AiOutlineForm>
                                 <NavLink to={"/components"}>Components</NavLink>
                             </div>
                         </span>
@@ -55,13 +54,6 @@ const Header = () => {
                                 <LoginLogoutToggleButton></LoginLogoutToggleButton>
                             </NavLink>
                         </span>
-                        <button onClick={openHandler} className="block md:hidden">
-                            {
-                                open
-                                    ? <MdClose className='w-5 h-5'></MdClose>
-                                    : <FaBars className='w-5 h-5'></FaBars>
-                            }
-                        </button>
                     </div>
                 </div>
             </div>
@@ -87,4 +79,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default HeaderMobile;
