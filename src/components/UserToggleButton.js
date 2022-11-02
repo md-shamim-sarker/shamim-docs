@@ -1,20 +1,21 @@
 import React from 'react';
 import {useContext} from 'react';
+import {FaUserAlt} from 'react-icons/fa';
 import {AuthContext} from '../contexts/UserContext';
 
-const LoginLogoutToggleButton = () => {
+const UserToggleButton = () => {
     const {user} = useContext(AuthContext);
     return (
         <>
-            <button className='bg-blue-700 hover:bg-blue-600 text-blue-50 px-2 py-1 rounded-md'>
+            <button>
                 {
                     user?.uid
-                        ? 'Logout'
-                        : 'Login'
+                        ? <FaUserAlt></FaUserAlt>
+                        : <FaUserAlt></FaUserAlt>
                 }
             </button>
         </>
     );
 };
 
-export default LoginLogoutToggleButton;
+export default UserToggleButton;

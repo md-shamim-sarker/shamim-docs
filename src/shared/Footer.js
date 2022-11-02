@@ -6,7 +6,7 @@ import {AppContext} from '../contexts/UserContext';
 const Footer = () => {
     const {dark} = useContext(AppContext);
     return (
-        <div className={dark ? 'bg-gray-700 text-gray-50 w-[100%] lg:w-[80%] float-right flex items-center gap-x-1 justify-center py-5' : 'bg-blue-200 text-gray-800 w-[100%] lg:w-[80%] float-right flex items-center gap-x-1 justify-center py-5'}>
+        <div className={dark ? 'bg-gray-700 text-gray-50 w-[100%] lg:w-[80%] float-right flex items-center gap-x-1 justify-center py-4' : 'bg-blue-200 text-gray-800 w-[100%] lg:w-[80%] float-right flex items-center gap-x-1 justify-center py-4'}>
             <FaCopyright></FaCopyright>
             <small>All Rights Reserved | Md. Shamim Sarker | 2022</small>
         </div>

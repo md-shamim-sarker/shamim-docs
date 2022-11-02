@@ -13,6 +13,8 @@ import ReactRouting from "../topics/ReactRouting";
 import DynamicPageTitle from "../topics/DynamicPageTitle";
 import PickFormData from "../topics/PickFormData";
 import Projects from "../pages/Projects";
+import Login from "../pages/Login";
+import Registration from "../pages/Registration";
 
 const router = createBrowserRouter([
     {
@@ -69,6 +71,14 @@ const router = createBrowserRouter([
     {
         path: "/components",
         element: <Components></Components>
+    },
+    {
+        path: "/login",
+        element: <Login></Login>
+    },
+    {
+        path: "/registration",
+        element: <Registration></Registration>
     }
 ]);
 
