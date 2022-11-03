@@ -21,7 +21,8 @@ cd server-project
 npm init -y
 npm install express
 npm install cors
-npm install mongodb`}</TopicCode>
+npm install mongodb
+npm install dotenv`}</TopicCode>
             <TopicBullet>2: Folder structure of server-side project</TopicBullet>
             <TopicCode>{`node_modules
 .env
@@ -30,6 +31,34 @@ index.js
 package-lock.json
 package.json
 README.md`}</TopicCode>
+            <TopicBullet>3: package.json</TopicBullet>
+            <TopicCode>{`{
+    "name": "react-express-mongo-crud-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \\"Error: no test specified\\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shamimspro/react-express-mongo-crud-server.git"
+    },
+    "keywords": [],
+    "author": "Shamim Sarker",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/shamimspro/react-express-mongo-crud-server/issues"
+    },
+    "homepage": "https://github.com/shamimspro/react-express-mongo-crud-server#readme",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "mongodb": "^4.11.0"
+    }
+}`}</TopicCode>
             <TopicBullet>3: .gitignore</TopicBullet>
             <TopicCode>{`node_modules`}</TopicCode>
             <TopicBullet>4: index.js</TopicBullet>
