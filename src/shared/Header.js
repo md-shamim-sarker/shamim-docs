@@ -61,10 +61,9 @@ const Header = () => {
 
                             {
                                 user?.uid
-                                    ? <img src={user.photoURL} alt={user.displayName} title={user.displayName} className="w-7 h-7 rounded-full" />
-                                    : <FaUser></FaUser>
+                                    ? <NavLink to={"/userDetails"}><img src={user.photoURL} alt={user.displayName} title={user.displayName} className="w-7 h-7 rounded-full" /></NavLink>
+                                    : <NavLink to={"/userDetails"}><FaUser></FaUser></NavLink>
                             }
-
 
                             {
                                 user?.uid

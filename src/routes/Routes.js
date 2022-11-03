@@ -16,6 +16,8 @@ import Projects from "../pages/Projects";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import ProtectedRoutes from "./ProtectedRoutes";
+import UpdateUser from "../pages/UpdateUser";
+import UserDetails from "../pages/UserDetails";
 
 const router = createBrowserRouter([
     {
@@ -80,7 +82,15 @@ const router = createBrowserRouter([
     {
         path: "/registration",
         element: <Registration></Registration>
-    }
+    },
+    {
+        path: "/updateUser",
+        element: <UpdateUser></UpdateUser>
+    },
+    {
+        path: "/userDetails",
+        element: <UserDetails></UserDetails>
+    },
 ]);
 
 export default router;

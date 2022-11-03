@@ -85,7 +85,7 @@ const Login = () => {
     return (
         <div className='overflow-x-hidden'>
             <HeaderMobile></HeaderMobile>
-            <div className={`w-screen h-[92vh] flex justify-center items-center ${dark ? 'bg-gray-900 text-gray-50' : 'bg-gray-50 text-gray-900'}`}>
+            <div className={`w-screen h-auto lg:h-[92vh] flex justify-center items-center ${dark ? 'bg-gray-900 text-gray-50' : 'bg-gray-50 text-gray-900'}`}>
                 <div className='w-4/5 h-4/5 flex p-10 gap-y-10 flex-col lg:flex-row justify-center items-center'>
                     <div className='w-full'>
                         <img src={loginReg} alt="login_photo" />

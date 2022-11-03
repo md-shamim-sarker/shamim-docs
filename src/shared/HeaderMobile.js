@@ -6,11 +6,19 @@ import {ImUserCheck} from 'react-icons/im';
 import {useContext} from 'react';
 import {AppContext, AuthContext} from '../contexts/UserContext';
 import DarkLightToggleButton from '../components/DarkLightToggleButton';
-import LoginLogoutToggleButton from '../components/LoginLogoutToggleButton';
 
 const HeaderMobile = () => {
     const {dark} = useContext(AppContext);
-    const {user} = useContext(AuthContext);
+    const {user, logOut, setUser} = useContext(AuthContext);
+
+    const logOutHandler = () => {
+        logOut()
+            .then(() => {
+                setUser(null);
+            }).catch((error) => {
+                console.log(error);
+            });
+    };
 
     return (
         <>
@@ -51,12 +59,14 @@ const HeaderMobile = () => {
                             <DarkLightToggleButton></DarkLightToggleButton>
                             {
                                 user?.uid
-                                    ? <img src={user.photoURL} alt={user.displayName} title={user.displayName} className="w-7 h-7 rounded-full" />
-                                    : <FaUser></FaUser>
+                                    ? <NavLink to={"/userDetails"}><img src={user.photoURL} alt={user.displayName} title={user.displayName} className="w-7 h-7 rounded-full" /></NavLink>
+                                    : <NavLink to={"/userDetails"}><FaUser></FaUser></NavLink>
                             }
-                            <NavLink to={"/login"}>
-                                <LoginLogoutToggleButton></LoginLogoutToggleButton>
-                            </NavLink>
+                            {
+                                user?.uid
+                                    ? <button onClick={logOutHandler} className='bg-blue-700 hover:bg-blue-600 text-blue-50 px-2 py-1 rounded-md'>Logout</button>
+                                    : <NavLink to={"/login"}><button className='bg-blue-700 hover:bg-blue-600 text-blue-50 px-2 py-1 rounded-md'>Login</button></NavLink>
+                            }
                         </span>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
 import prism from 'react-syntax-highlighter/dist/esm/styles/prism/darcula';
-import {getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, GithubAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, sendEmailVerification} from "firebase/auth";
+import {getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, GithubAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, sendEmailVerification, updateEmail} from "firebase/auth";
 import app from '../firebase/firebase.config';
 
 SyntaxHighlighter.registerLanguage('jsx', jsx);
@@ -19,7 +19,7 @@ const notify = () => toast("Copied to clipboard.");
 const UserContext = ({children}) => {
     const [open, setOpen] = useState(false); // Side nav toggler
     const [dark, setDark] = useState(false);
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
 
     // All Provider
@@ -60,6 +60,11 @@ const UserContext = ({children}) => {
     // Update user
     const updateUser = (userObj) => {
         return updateProfile(auth.currentUser, userObj);
+    };
+
+    // Update email
+    const updateEmailId = (email) => {
+        return updateEmail(auth.currentUser, email);
     };
 
     // Send Email Verification
@@ -128,7 +133,8 @@ const UserContext = ({children}) => {
         logOut,
         loading,
         createUser,
-        updateUser
+        updateUser,
+        updateEmailId
     };
 
     // For AppContext
