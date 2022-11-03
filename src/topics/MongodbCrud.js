@@ -24,6 +24,7 @@ npm install cors
 npm install mongodb`}</TopicCode>
             <TopicBullet>2: Folder structure of server-side project</TopicBullet>
             <TopicCode>{`node_modules
+.env
 .gitignore
 index.js
 package-lock.json
@@ -35,6 +36,7 @@ README.md`}</TopicCode>
             <TopicCode>{`const express = require('express');
 const cors = require('cors');
 const {MongoClient, ServerApiVersion, ObjectId} = require('mongodb');
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -43,7 +45,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const uri = "mongodb://localhost:27017";
+const uri = \`mongodb+srv://\${process.env.DB_USER}:\${process.env.DB_PASSWORD}@cluster0.egsefuu.mongodb.net/?retryWrites=true&w=majority\`;
 const client = new MongoClient(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -52,8 +54,8 @@ const client = new MongoClient(uri, {
 
 async function run() {
     try {
-        const database = client.db("userdb");
-        const collection = database.collection("users");
+        const database = client.db("userDb");
+        const collection = database.collection("userCollection");
 
         // C from CRUD
         app.post('/users', async (req, res) => {
@@ -71,11 +73,26 @@ async function run() {
             res.send(users);
         });
 
+        // R from CRUD (find by id)
         app.get('/users/:id', async (req, res) => {
             const id = req.params.id;
             const query = {_id: ObjectId(id)};
             const user = await collection.findOne(query);
             res.send(user);
+        });
+
+        // R from CRUD (using query parameters)
+        // http://localhost:5000/usrs?firstName=Shamim (query parameter format)
+        app.get('/usrs', async (req, res) => {
+            let query = {};
+            if(req.query.firstName) {
+                query = {
+                    firstName: req.query.firstName
+                };
+            }
+            const cursor = collection.find(query);
+            const usrs = await cursor.toArray();
+            res.send(usrs);
         });
 
         // U from CRUD
@@ -115,6 +132,11 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(\`Example app listening on port \${port}\`);
 });`}</TopicCode>
+
+            <TopicBullet>5: .env</TopicBullet>
+            <TopicCode>{`DB_USER="express-mongo-crud"
+DB_PASSWORD="TFZRwxArr87QpnkP"`}</TopicCode>
+
             <TopicHeading>Client Side Project</TopicHeading>
             <TopicBullet>1: Setup client-side project (Use CMD)</TopicBullet>
             <TopicCode>{`npm create vite@latest
