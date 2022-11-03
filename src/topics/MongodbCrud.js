@@ -134,8 +134,8 @@ app.listen(port, () => {
 });`}</TopicCode>
 
             <TopicBullet>5: .env</TopicBullet>
-            <TopicCode>{`DB_USER="express-mongo-crud"
-DB_PASSWORD="TFZRwxArr87QpnkP"`}</TopicCode>
+            <TopicCode>{`DB_USER="XXXXXXXXXX"
+DB_PASSWORD="XXXXXXXXXXXXXXX"`}</TopicCode>
 
             <TopicHeading>Client Side Project</TopicHeading>
             <TopicBullet>1: Setup client-side project (Use CMD)</TopicBullet>
