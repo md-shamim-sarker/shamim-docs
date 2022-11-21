@@ -9,7 +9,8 @@ const ProtectedRoutes = ({children}) => {
     if(loading) {
         return <h2>Loading...</h2>;
     }
-    if(user && user.uid) {
+
+    if(user) {
         return children;
     }
 

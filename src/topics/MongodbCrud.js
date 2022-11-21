@@ -370,6 +370,8 @@ export default ErrorPage;`}</TopicCode>
             <div className='flex justify-center gap-x-3'>
                 <GithubLink>{'https://github.com/shamimspro/react-express-mongo-crud-server'}</GithubLink>
                 <GithubLink>{'https://github.com/shamimspro/react-express-mongo-crud-client'}</GithubLink>
+                <GithubLink>{'https://github.com/shamimspro/amazon-server'}</GithubLink>
+                <GithubLink>{'https://github.com/shamimspro/amazon-client'}</GithubLink>
             </div>
         </>
     );

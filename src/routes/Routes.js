@@ -18,6 +18,9 @@ import Registration from "../pages/Registration";
 import ProtectedRoutes from "./ProtectedRoutes";
 import UpdateUser from "../pages/UpdateUser";
 import UserDetails from "../pages/UserDetails";
+import SimplePagination from "../topics/SimplePagination";
+import PrivateRoute from "../topics/PrivateRoute";
+import JwtToken from "../topics/JwtToken";
 
 const router = createBrowserRouter([
     {
@@ -59,6 +62,18 @@ const router = createBrowserRouter([
             {
                 path: "/pickFormData",
                 element: <ProtectedRoutes><PickFormData></PickFormData></ProtectedRoutes>
+            },
+            {
+                path: "/simplePagination",
+                element: <ProtectedRoutes><SimplePagination></SimplePagination></ProtectedRoutes>
+            },
+            {
+                path: "/privateRoute",
+                element: <ProtectedRoutes><PrivateRoute></PrivateRoute></ProtectedRoutes>
+            },
+            {
+                path: "/jwtToken",
+                element: <ProtectedRoutes><JwtToken></JwtToken></ProtectedRoutes>
             },
         ],
         errorElement: <ErrorPage></ErrorPage>

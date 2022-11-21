@@ -88,7 +88,7 @@ const UserContext = ({children}) => {
     // react-syntax-highlighter
     const jsHighlighter = (code) => {
         return (
-            <SyntaxHighlighter onClick={copyToClipboard} language='jsx' style={prism}>
+            <SyntaxHighlighter language='jsx' style={prism}>
                 {code}
             </SyntaxHighlighter>
         );

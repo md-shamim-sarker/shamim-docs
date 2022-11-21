@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {SiExpress, SiFirebase, SiMongodb} from 'react-icons/si';
-import {FaHighlighter, FaReact, FaWpforms} from 'react-icons/fa';
+import {SiExpress, SiFirebase, SiJsonwebtokens, SiMongodb} from 'react-icons/si';
+import {FaCopy, FaHighlighter, FaReact, FaRoute, FaWpforms} from 'react-icons/fa';
+import {RiGitRepositoryPrivateFill} from 'react-icons/ri';
 import {MdWeb} from 'react-icons/md';
 
 const TopicNav = () => {
@@ -10,8 +11,13 @@ const TopicNav = () => {
             <h2 className='text-xl font-bold text-center pt-5'>Topic Navigation</h2><hr />
 
             <NavLink to={"/reactRouting"} className="flex items-center gap-x-1">
-                <FaReact></FaReact>
+                <FaRoute></FaRoute>
                 <span>React Routing</span>
+            </NavLink><hr />
+
+            <NavLink to={"/privateRoute"} className="flex items-center gap-x-1">
+                <RiGitRepositoryPrivateFill></RiGitRepositoryPrivateFill>
+                <span>Private Route</span>
             </NavLink><hr />
 
             <NavLink to={"/contextApi"} className="flex items-center gap-x-1">
@@ -47,6 +53,16 @@ const TopicNav = () => {
             <NavLink to={"/pickFormData"} className="flex items-center gap-x-1">
                 <FaWpforms></FaWpforms>
                 <span>Pick Form Data</span>
+            </NavLink><hr />
+
+            <NavLink to={"/simplePagination"} className="flex items-center gap-x-1">
+                <FaCopy></FaCopy>
+                <span>Simple Pagination</span>
+            </NavLink><hr />
+
+            <NavLink to={"/jwtToken"} className="flex items-center gap-x-1">
+                <SiJsonwebtokens></SiJsonwebtokens>
+                <span>Json Web Token</span>
             </NavLink><hr />
         </div>
     );

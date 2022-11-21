@@ -51,7 +51,6 @@ const Registration = () => {
                 console.log(error);
                 // setMessage("This email already in use.");
             });
-
     };
 
     const onBlurHandler = (event) => {
