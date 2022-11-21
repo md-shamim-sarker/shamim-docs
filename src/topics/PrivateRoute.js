@@ -5,7 +5,7 @@ import TopicTitle from '../components/TopicTitle';
 
 const PrivateRoute = () => {
     return (
-        <div>
+        <>
             <TopicTitle>Private Route</TopicTitle>
             <TopicBullet>1: PrivateRoute.js</TopicBullet>
             <TopicCode>{`import React, {useContext} from 'react';
@@ -26,7 +26,13 @@ const ProtectedRoutes = ({children}) => {
 
     return <Navigate to={"/login"} state={{from: location}} replace></Navigate>;
 };`}</TopicCode>
-        </div>
+
+            <TopicBullet>2: How to use in Routes.js</TopicBullet>
+            <TopicCode>{`{
+    path: "/contextApi",
+    element: <PrivateRoute><ContextApi></ContextApi></PrivateRoute>
+},`}</TopicCode>
+        </>
     );
 };
 

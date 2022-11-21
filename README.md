@@ -12,8 +12,7 @@
 
 # Redeploy firebase
 ```bash
-npm run build
-firebase deploy
+npm run build && firebase deploy
 ```
 # Live Link
 https://shamim-docs.web.app/
